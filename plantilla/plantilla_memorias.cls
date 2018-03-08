@@ -54,6 +54,7 @@
 \definecolor{uc3mNewBlue}{RGB}{0, 29, 133}
 
 %%%%% Some booleans to format header %%%%%
+\newif\ifcoauthorstwo
 \newif\ifcoauthorsthree
 \newif\ifcoauthorsfour
 \newif\ifemail
@@ -120,6 +121,16 @@
 %%%%% Header %%%%%
 \newcommand{\header}[0]{
 	%%%% Left part of header %%%%
+	\ifcoauthorstwo
+	\lhead{
+		\textcolor{gray}{
+		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
+		\begin{tabular}{lll}
+		\coauthorIofII & \niaIofII\\
+		\coauthorIIofII & \niaIIofII\\
+		\end{tabular}}
+	}	
+	\fi	
 	\ifcoauthorsthree
 	\lhead{
 		\textcolor{gray}{
@@ -142,31 +153,18 @@
 		\coauthorIVofIV & \niaIVofIV\\
 		\end{tabular}}
 	}
-	\else
-	\lhead{
-		\textcolor{gray}{
-		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
-		\begin{tabular}{lll}
-		\coauthorIofII & \niaIofII\\
-		\coauthorIIofII & \niaIIofII\\
-		\end{tabular}}
-	}	
 	\fi
 
 	%%%% Right part of header %%%%
-	\rhead{
-	\ifcoauthorsthree
-	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
-	\fi
-	\ifcoauthorsfour % Same style as coauthorsthree
-	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
+	\ifcoauthorsfour
+		\rhead{\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}}	% Logo image uc3m
 	\else
-	\vspace*{-\baselineskip} % To remove white spaces up and down the header table
-	\begin{tabular}{c}
-	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
-	\end{tabular}
+		\rhead{
+		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
+		\begin{tabular}{c}
+		\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
+		\end{tabular}}
 	\fi
-	}
 	\renewcommand{\headrulewidth}{0pt}		% To erase header line
 }
 
@@ -195,24 +193,37 @@
 	\end{center}
 	\vspace{5mm}
 	\begin{flushright}
-	\ifcoauthorsthree
+	\ifcoauthorstwo
 		\ifemail
-		\begin{tabular}{ r c r }
-			\large{\coauthorIofIII} & \large{\niaIofIII} & \large{\emailIofIII}\\
-			\large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\emailIIofIII}\\
-			\large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\emailIIIofIII}\\
+		\begin{tabular}{ r r r r }
+			\large{\coauthorIofII} & \large{\niaIofII} & \large{\groupIofII} & \large{\emailIofII}\\
+			\large{\coauthorIIofII} & \large{\niaIIofII} & \large{\groupIIofII} & \large{\emailIIofII}\\
 		\end{tabular}
 		\else
-		\begin{tabular}{ r r }
-			\large{\coauthorIofIII} & \large{\niaIofIII}\\
-			\large{\coauthorIIofIII} & \large{\niaIIofIII}\\
-			\large{\coauthorIIIofIII} & \large{\niaIIIofIII}\\
+		\begin{tabular}{ r r r }
+			\large{\coauthorIofII} & \large{\niaIofII} & \large{\groupIofII}\\
+			\large{\coauthorIIofII} & \large{\niaIIofII} & \large{\groupIIofII}\\
+		\end{tabular}
+		\fi
+	\fi
+	\ifcoauthorsthree
+		\ifemail
+		\begin{tabular}{ r r r r }
+			\large{\coauthorIofIII} & \large{\niaIofIII} & \large{\groupIofIII} & \large{\emailIofIII}\\
+			\large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\groupIIofIII} & \large{\emailIIofIII}\\
+			\large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\groupIIIofIII} & \large{\emailIIIofIII}\\
+		\end{tabular}
+		\else
+		\begin{tabular}{ r r r }
+			\large{\coauthorIofIII} & \large{\niaIofIII} & \large{\groupIofIII}\\
+			\large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\groupIIofIII}\\
+			\large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\groupIIIofIII}\\
 		\end{tabular}
 		\fi
 	\fi
 	\ifcoauthorsfour
 		\ifemail
-		\begin{tabular}{ r c r }
+		\begin{tabular}{ r r r }
 			\large{\coauthorIofIV} & \large{\niaIofIV} & \large{\emailIofIV}\\
 			\large{\coauthorIIofIV} & \large{\niaIIofIV} & \large{\emailIIofIV}\\
 			\large{\coauthorIIIofIV} & \large{\niaIIIofIV} & \large{\emailIIIofIV}\\
@@ -226,6 +237,7 @@
 			\large{\coauthorIVofIV} & \large{\niaIVofIV}\\
 		\end{tabular}
 		\fi
+	\fi
 	% \ifemail
 	% \begin{tabular}{ r r r }
 	% \large{Aitor Alonso Núñez} & \large{NIA 100346169} & \large{Gr. 82}\\
@@ -233,19 +245,6 @@
 	% \large{\almItres} & \large{\niaItres} & \large{\grupoItres}\\			% Se añaden coautores
 	% \multicolumn{3}{r}{\large{\emailII}}\\		
 	% \end{tabular}
-	\else
-	\ifemail
-		\begin{tabular}{ r c r }
-			\large{\coauthorIofII} & \large{\niaIofII} & \large{\emailIofII}\\
-			\large{\coauthorIIofII} & \large{\niaIIofII} & \large{\emailIIofII}\\
-		\end{tabular}
-		\else
-		\begin{tabular}{ r r }
-			\large{\coauthorIofII} & \large{\niaIofII}\\
-			\large{\coauthorIIofII} & \large{\niaIIofII}\\
-		\end{tabular}
-		\fi
-	\fi
 	\end{flushright}
 	\vspace{1cm}
 	\begin{center}
