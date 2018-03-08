@@ -1,59 +1,75 @@
-\documentclass[10pt, spanish, pdftex]{plantilla/plantilla_memorias}
+\documentclass[10pt, english, pdftex]{plantilla/plantilla_memorias}
+% \documentclass[10pt, spanish, pdftex]{plantilla/plantilla_memorias}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Plantilla de estilos para memorias de prácticas UC3M %
+%               UC3M Work report template              %
 %           Universidad Carlos III de Madrid           %
-% Autor: Aitor Alonso Núñez                            %
-% Última actualización: 8 de marzo de 2018             %
+%              Author: Aitor Alonso Núñez              %
+%              Last update: March 8, 2018              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%% Preámbulo %%%%%
-\usepackage{fancyhdr}		% Permite añadir encabezado y pie de página
-\usepackage{graphicx}		% Permite añadir imágenes
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{lipsum}
-\usepackage[hidelinks]{hyperref}	% Ahora los elemento del índice actúan como enlaces, también se permite enlaces a internet
-\usepackage{nameref}				% Permite añadir etiquetas \label{nombre} a las que referenciar con \nameref{intro}
-\author{Aitor Alonso Núñez}
+%%%%% Preamble %%%%%
+\usepackage{fancyhdr}				% To add header and footer
+\usepackage{graphicx}				% To add images
+\usepackage{caption}				% To add captions
+\usepackage{subcaption}				% To add subcaptions
+\usepackage{lipsum}					% Example Lorem ipsum text
+\usepackage[hidelinks]{hyperref}	% Index elements works as cross references. Also functional links to internet pages
+\usepackage{nameref}				% Allow to add labels with \label{name} which can be reference with \nameref{name}
+\author{Aitor Alonso Núñez}			% This is me!
 
-
-%%%%% Co-autores y NIA %%%%%
-%%%%% Dejar corchetes {} en blanco si es necesario
-%%%%% Si el número de coautores está entre 3 y 4 usar estas opciones, en caso contrario comentarlas
-%\oauthorsFourtrue
-%\coautoresCuatro{Compañero1 Apellido}{NIA 100XXXXXX}{Compañero2 Apellido}{NIA 100XXXXXX}{Compañero3 Apellido}{NIA 100XXXXXX}{Compañero4 Apellido}{NIA 100XXXXXX}
-
-%%%%% Si el número de coautores está entre 1 y 2 usar estas opciones, en caso contrario comentarlas
-% Dejar corchetes {} en blanco si es necesario
-\coauthorsfourfalse
-\coauthorsfourfalse
-\coauthorstwo{Compañero1 Apellido}{NIA 100XXXXXX}{Gr. XX}{Compañero2 Apellido}{NIA 100XXXXXX}{Gr. XX}
-
-%%%%% Añadir dirección de email en la portada (solo válido para ti y un compañero) %%%%%
+%%%%% Coauthors info %%%%%
+%%[1-2] If you want to show coauthors email address on the title page, enable \emailtrue. Otherwise, enable \emailfalse
+% \emailtrue
 \emailfalse
-%\correotrue
-%\emails{100346169@alumnos.uc3m.es}{correo}
+%% If coauthors are between 1 and 2 uncomment these options. Comment it otherwise.
+%% You can leave empty keys {} if you need to.
+\coauthorstwotrue		% coauthors two = true
+\coauthorsthreefalse	% coauthors three = false
+\coauthorsfourfalse		% coauthors four = false
+\coauthorstwo{Name1 Lastname1}{NIA 100XXXXXX}{Gr. XX}{Name2 Lastname2}{NIA 100XXXXXX}{Gr. XX}
+%%[3] If you enabled \emailtrue, uncomment the option below
+% \emailstwo{email1@domain.tld}{email2@domain.tld}
 
-%%%%% Datos básicos (titulación, asignatura, título del documento) %%%%%
-\documentdata{Grado en Ingeniería Informática}{Nombre de la asignatura}{Nombre del documento}
+%% If coauthors are between 1 and 2 uncomment these options. Comment it otherwise.
+%% You can leave empty keys {} if you need to.
+% \coauthorstwofalse		% coauthors two = false
+% \coauthorsthreetrue		% coauthors three = true
+% \coauthorsfourfalse		% coauthors four = false
+% \coauthorsthree{Name1 Lastname1}{NIA 100XXXXXX}{Gr. XX}{Name2 Lastname2}{NIA 100XXXXXX}{Gr. XX}{Name3 Lastname3}{NIA 100XXXXXX}{Gr. XX}
+%% If you want to show on the title page the email address of these coauthors uncomment the next options
+%% and comment \emailfalse. In other case, comment everything except \emailfalse
+% \emailsthree{email1@domain.tld}{email2@domain.tld}{email3@domain.tld}
 
-%%%%% Encabezado %%%%%
+%%[4] If coauthors are between 1 and 2 uncomment these options. Comment it otherwise.
+%% You can leave empty keys {} if you need to.
+% \coauthorstwofalse		% coauthors two = false
+% \coauthorsthreefalse		% coauthors three = false
+% \coauthorsfourtrue		% coauthors four = true
+% \coauthorsfour{Name1 Lastname1}{NIA 100XXXXXX}{Name2 Lastname2}{NIA 100XXXXXX}{Name3 Lastname3}{NIA 100XXXXXX}{Name4 Lastname4}{NIA 100XXXXXX}
+%% If you want to show on the title page the email address of these coauthors uncomment the next options
+%% and comment \emailfalse. In other case, comment everything except \emailfalse
+% \emailsfour{email1@domain.tld}{email2@domain.tld}{email3@domain.tld}{email4@domain.tld}
+
+
+%%%%% Basic data about the document (Degree, subject, title, campus, page number custom text) %%%%%
+\documentdata{Degree}{Subject}{Document title}{Campus}{Page: }
+
+%%%%% Page style %%%%%
 \header
-
-%%%%% Pie de Página %%%%%
 \footer
 \pagestyle{fancy}
-
 \begin{document}
-%%%%% Portada %%%%%
+
+%%%%% Page title %%%%%
 \titleMain
 
-%%%%% Índice %%%%%
-\tableofcontents 	% Añadimos índice
-\newpage 			% Después del índice, le indicamos iniciar en una página nueva
+%%%%% Index %%%%%
+\tableofcontents 	% We add the index
+\newpage 			% And before index we start on a new page
 
 %%%%% CONTENIDO DEL DOCUMENTO %%%%%
+%% VERY IMPORTANT!!! On the first line of this .tex file, select Spanish or English language to coincide with document text language
 \section{Etiqueta section}
 \p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
 quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,

@@ -94,11 +94,13 @@
 	\def\niaIVofIV{#8}
 }
 
-%%%%% Basic data about document (study name, subject name, and document title) %%%%%
-\newcommand{\documentdata}[3]{
+%%%%% Basic data about document (degree, subject, document title, campus and page number custom text) %%%%%
+\newcommand{\documentdata}[5]{
 	\def\studyname{#1}
 	\def\subjectname{#2}
 	\def\documenttitle{#3}
+	\def\campus{#4}
+	\def\mypagename{#5}
 }
 
 %%%%% Email addresses of document coauthors %%%%
@@ -165,16 +167,16 @@
 		\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
 		\end{tabular}}
 	\fi
-	\renewcommand{\headrulewidth}{0pt}		% To erase header line
+	\renewcommand{\headrulewidth}{0pt}	% To erase header line
 }
 
 %%%%% Footer %%%%%
 \newcommand{\footer}[0]{						
-	\renewcommand{\footrulewidth}{0.1pt}		% Añadimos una línea que separe el pie de página del resto del documento.
-	\cfoot{\vspace{1mm}\textcolor{uc3mNewBlue}{Universidad Carlos III de Madrid - Escuela Politécnica Superior}
+	\renewcommand{\footrulewidth}{0.1pt}	% Separation rule
+	\cfoot{\vspace{1mm}\textcolor{uc3mNewBlue}{Universidad Carlos III de Madrid - \campus}
 	\textcolor{uc3mNewBlue}{\\\studyname
 	\\\subjectname}}
-	\rfoot{\vspace{1mm} Página \thepage} 		% Página actual
+	\rfoot{\vspace{1mm} \mypagename \thepage} % Current page
 }
 
 %%%%% Title page %%%%%
