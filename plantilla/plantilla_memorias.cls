@@ -1,0 +1,290 @@
+\NeedsTeXFormat{LaTeX2e}														% Tells the compiler which version of LaTeX the package is for.
+\ProvidesClass{plantilla_memorias}[2016/04/21 Template for UC3M work report]	% Gives the compiler some information about your package.
+\LoadClass{article}																% Our template is based on article.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla de estilos para memorias de prácticas UC3M %
+%           Universidad Carlos III de Madrid           %
+% Autor: Aitor Alonso Núñez                            %
+% Última actualización: 8 de marzo de 2018             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% Required Packages %%%%%
+\RequirePackage[pdftex, usenames, dvipsnames]{color}	% So that we can define colors and change color fonts.
+\RequirePackage[table,xcdraw]{xcolor}
+%\RequirePackage{xcolor}								% More colors
+\RequirePackage{ragged2e}								% To allign some lines.
+\RequirePackage[T1]{fontenc}							% Because we use vectorial fonts (type-1).
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\RequirePackage{courier}								% To add code snippets.
+\RequirePackage{geometry}								% To define paper format and general margins.
+\RequirePackage{graphicx}								% To add images and graphics.
+\RequirePackage[spanish, es-noindentfirst]{babel}		% Language format package (Spanish).
+\RequirePackage{setspace}								% Used when we modify spacing between lines.
+\RequirePackage{fancyhdr}								% So that we can add header and footer.
+\RequirePackage{titlesec}								% Useful to set title styles.
+\RequirePackage{afterpage}								% To change backgroud colors per page.
+\RequirePackage{float}									% Important on figures.
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{multirow}
+\RequirePackage{xkeyval}
+\RequirePackage{textcomp}								% To write symbols like €
+ 
+%%%%% Setting margins %%%%%
+\setlength{\headheight}{50pt}
+\setlength{\footskip}{30pt}
+\geometry{verbose,a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
+
+\onehalfspace 										% Spacing between lines.
+\setlength{\parindent}{0cm}							% Indent length.
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist						%To change margins of a few lines.
+
+%%%%% Colors %%%%%
+\definecolor{gray}{rgb}{0.2509803922, 0.2509803922, 0.2509803922}
+\definecolor{grayLight}{rgb}{0.4980392157, 0.4980392157, 0.4980392157}
+%Color UC3M corporative identity
+%	Old corporative identity
+\definecolor{uc3mDarkBlue}{RGB}{0, 7, 121}
+\definecolor{uc3mBlue}{RGB}{32, 85, 138}
+\definecolor{uc3mLightBlue}{RGB}{99, 158, 200}
+%	New corporative identity
+\definecolor{uc3mNewBlue}{RGB}{0, 29, 133}
+
+%%%%% Some booleans to format header %%%%%
+\newif\ifcoauthorsthree
+\newif\ifcoauthorsfour
+\newif\ifemail
+
+%%%%% Coauthors (students), NIA and group, up to two coauthors %%%%%
+\newcommand{\coauthorstwo}[6]{
+	\def\coauthorIofII{#1}
+	\def\niaIofII{#2}
+	\def\groupIofII{#3}
+	\def\coauthorIIofII{#4}
+	\def\niaIIofII{#5}
+	\def\groupIIofII{#6}
+}
+
+%%%%% Coauthors (students), NIA and group, up to three coauthors %%%%%
+\newcommand{\coauthorsthree}[9]{
+	\def\coauthorIofIII{#1}
+	\def\niaIofIII{#2}
+	\def\groupIofIII{#3}
+	\def\coauthorIIofIII{#4}
+	\def\niaIIofIII{#5}
+	\def\groupIIofIII{#6}
+	\def\coauthorIIIofIII{#7}
+	\def\niaIIIofIII{#8}
+	\def\groupIIIofIII{#9}
+}
+
+%%%%% Coauthors (students) with NIA and without group, up to four coauthors %%%%%
+\newcommand{\coauthorsfour}[8]{
+	\def\coauthorIofIV{#1}
+	\def\niaIofIV{#2}
+	\def\coauthorIIofIV{#3}
+	\def\niaIIofIV{#4}
+	\def\coauthorIIIofIV{#5}
+	\def\niaIIIofIV{#6}
+	\def\coauthorIVofIV{#7}
+	\def\niaIVofIV{#8}
+}
+
+%%%%% Basic data about document (study name, subject name, and document title) %%%%%
+\newcommand{\documentdata}[3]{
+	\def\studyname{#1}
+	\def\subjectname{#2}
+	\def\documenttitle{#3}
+}
+
+%%%%% Email addresses of document coauthors %%%%
+\newcommand{\emailstwo}[2]{
+	\def\emailIofII{#1}
+	\def\emailIIofII{#2}
+}
+\newcommand{\emailsthree}[3]{
+	\def\emailIofIII{#1}
+	\def\emailIIofIII{#2}
+	\def\emailIIIofIII{#3}
+}
+\newcommand{\emailsfour}[4]{
+	\def\emailIofIV{#1}
+	\def\emailIIofIV{#2}
+	\def\emailIIIofIV{#3}
+	\def\emailIVofIV{#4}
+}
+
+%%%%% Header %%%%%
+\newcommand{\header}[0]{
+	%%%% Left part of header %%%%
+	\ifcoauthorsthree
+	\lhead{
+		\textcolor{gray}{
+		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
+		\begin{tabular}{ll}
+		\coauthorIofIII & \niaIofIII\\
+		\coauthorIIofIII & \niaIIofIII\\
+		\coauthorIIIofIII & \niaIIIofIII\\
+		\end{tabular}}
+	}
+	\else \ifcoauthorsfour
+	\lhead{
+		\textcolor{gray}{
+		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
+		\begin{tabular}{ll}
+		\coauthorIofIV & \niaIofIV\\
+		\coauthorIIofIV & \niaIIofIV\\
+		\coauthorIIIofIV & \niaIIIofIV\\
+		\coauthorIVofIV & \niaIVofIV\\
+		\end{tabular}}
+	}
+	\else
+	\lhead{
+		\textcolor{gray}{
+		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
+		\begin{tabular}{lll}
+		\coauthorIofII & \niaIofII\\
+		\coauthorIIofII & \niaIIofII\\
+		\end{tabular}}
+	}	
+	\fi
+
+	%%%% Right part of header %%%%
+	\rhead{
+	\ifcoauthorsthree
+	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
+	\else
+	\ifcoauthorsfour % Same style as coauthorsthree
+	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
+	\else
+	\vspace*{-\baselineskip} % To remove white spaces up and down the header table
+	\begin{tabular}{c}
+	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
+	\end{tabular}
+	\fi
+	}
+	\renewcommand{\headrulewidth}{0pt}		% To erase header line
+}
+
+%%%%% Footer %%%%%
+\newcommand{\footer}[0]{						
+	\renewcommand{\footrulewidth}{0.1pt}		% Añadimos una línea que separe el pie de página del resto del documento.
+	\cfoot{\vspace{1mm}\textcolor{uc3mNewBlue}{Universidad Carlos III de Madrid - Escuela Politécnica Superior}
+	\textcolor{uc3mNewBlue}{\\\studyname
+	\\\subjectname}}
+	\rfoot{\vspace{1mm} Página \thepage} 		% Página actual
+}
+
+%%%%% Title page %%%%%
+\newcommand{\titleMain}[0]{
+	\begin{titlepage}
+	~\\[0.1 cm]
+	\begin{center}
+	\textcolor{uc3mNewBlue}{\rule{\textwidth}{3px}} 
+	{\Huge {\textcolor{gray}{\fontseries{bx}{\selectfont \documenttitle}}}	
+	~\\[0.1 cm]
+	\textcolor{uc3mNewBlue}{\rule{\textwidth}{3px}}}
+	~\\[0.1 cm]
+	\Large \mdseries\textcolor{gray}{
+	\textbf{\studyname}	
+	\textbf{\\\subjectname}}
+	\end{center}
+	\vspace{5mm}
+	\begin{flushright}
+	\ifcoauthorsthree
+		\ifemail
+		\begin{tabular}{ r c r }
+			\large{\coauthorIofIII} & \large{\niaIofIII} & \large{\emailIofIII}\\
+			\large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\emailIIofIII}\\
+			\large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\emailIIIofIII}\\
+		\end{tabular}
+		\else
+		\begin{tabular}{ r r }
+			\large{\coauthorIofIII} & \large{\niaIofIII}\\
+			\large{\coauthorIIofIII} & \large{\niaIIofIII}\\
+			\large{\coauthorIIIofIII} & \large{\niaIIIofIII}\\
+		\end{tabular}
+		\fi
+	\else \ifcoauthorsfour
+		\ifemail
+		\begin{tabular}{ r c r }
+			\large{\coauthorIofIV} & \large{\niaIofIV} & \large{\emailIofIV}\\
+			\large{\coauthorIIofIV} & \large{\niaIIofIV} & \large{\emailIIofIV}\\
+			\large{\coauthorIIIofIV} & \large{\niaIIIofIV} & \large{\emailIIIofIV}\\
+			\large{\coauthorIVofIV} & \large{\niaIVofIV} & \large{\emailIVofIV}\\
+		\end{tabular}
+		\else
+		\begin{tabular}{ r r }
+			\large{\coauthorIofIV} & \large{\niaIofIV}\\
+			\large{\coauthorIIofIV} & \large{\niaIIofIV}\\
+			\large{\coauthorIIIofIV} & \large{\niaIIIofIV}\\
+			\large{\coauthorIVofIV} & \large{\niaIVofIV}\\
+		\end{tabular}
+		\fi
+	% \ifemail
+	% \begin{tabular}{ r r r }
+	% \large{Aitor Alonso Núñez} & \large{NIA 100346169} & \large{Gr. 82}\\
+	% \multicolumn{3}{r}{\large{\emailI}}\\\\
+	% \large{\almItres} & \large{\niaItres} & \large{\grupoItres}\\			% Se añaden coautores
+	% \multicolumn{3}{r}{\large{\emailII}}\\		
+	% \end{tabular}
+	\else
+	\ifemail
+		\begin{tabular}{ r c r }
+			\large{\coauthorIofII} & \large{\niaIofII} & \large{\emailIofII}\\
+			\large{\coauthorIIofII} & \large{\niaIIofII} & \large{\emailIIofII}\\
+		\end{tabular}
+		\else
+		\begin{tabular}{ r r }
+			\large{\coauthorIofII} & \large{\niaIofII}\\
+			\large{\coauthorIIofII} & \large{\niaIIofII}\\
+		\end{tabular}
+		\fi
+	\fi
+	\end{flushright}
+	\vspace{1cm}
+	\begin{center}
+	\includegraphics[scale=0.25]{plantilla/logo_completo_vertical.png}
+	\end{center}
+	\end{titlepage}
+	\newpage
+}
+
+%%%%% Section style %%%%%
+%\titleformat{\section}{ 
+%	\raggedright\LARGE\bfseries\color{gray}{}}
+%	{}{0em}                     							 % Can be used to give a prefix to all sections, like 'Section ...'
+% 	{}                          							 % Can be used to insert code before the heading
+%	[\color{grayLight}{\titlerule[2pt]}\vspace{0.3cm}]
+\titleformat{\section}{
+	\large\bfseries\color{uc3mNewBlue}{}}
+	{}{0em}
+  	{}
+  	[\color{uc3mNewBlue}{\titlerule[2pt]}\vspace{0.3cm}]
+ 	
+%%%%% Subsection style %%%%%
+%\titleformat{\subsection}{
+%	\large\bfseries\color{uc3mBlue}{}}
+%	{}{0em}
+% 	{}
+\titleformat{\subsection}{
+	\normalsize\bfseries\color{uc3mNewBlue}{}}
+	{}{0em}
+  	{}
+
+
+%%%%% Subsubsection style %%%%%
+%\titleformat{\subsubsection}{
+%	\normalsize\bfseries\color{uc3mLightBlue}{}}
+%	{}{0em}
+% 	{}
+\titleformat{\subsubsection}{
+	\normalsize\color{uc3mNewBlue}{}}
+	{}{0em}
+  	{}
+  	
+%%%%% Text style %%%%%
+\newcommand{\p}{\justify\mdseries\normalsize{\hspace{0cm}}} %	\justify\mdseries\normalsize{\hspace{0cm}}}

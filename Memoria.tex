@@ -1,0 +1,76 @@
+\documentclass[10pt, spanish, pdftex]{plantilla/plantilla_memorias}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla de estilos para memorias de prácticas UC3M %
+%           Universidad Carlos III de Madrid           %
+% Autor: Aitor Alonso Núñez                            %
+% Última actualización: 8 de marzo de 2018             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% Preámbulo %%%%%
+\usepackage{fancyhdr}		% Permite añadir encabezado y pie de página
+\usepackage{graphicx}		% Permite añadir imágenes
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{lipsum}
+\usepackage[hidelinks]{hyperref}	% Ahora los elemento del índice actúan como enlaces, también se permite enlaces a internet
+\usepackage{nameref}				% Permite añadir etiquetas \label{nombre} a las que referenciar con \nameref{intro}
+\author{Aitor Alonso Núñez}
+
+
+%%%%% Co-autores y NIA %%%%%
+%%%%% Dejar corchetes {} en blanco si es necesario
+%%%%% Si el número de coautores está entre 3 y 4 usar estas opciones, en caso contrario comentarlas
+%\oauthorsFourtrue
+%\coautoresCuatro{Compañero1 Apellido}{NIA 100XXXXXX}{Compañero2 Apellido}{NIA 100XXXXXX}{Compañero3 Apellido}{NIA 100XXXXXX}{Compañero4 Apellido}{NIA 100XXXXXX}
+
+%%%%% Si el número de coautores está entre 1 y 2 usar estas opciones, en caso contrario comentarlas
+% Dejar corchetes {} en blanco si es necesario
+\coauthorsfourfalse
+\coauthorsfourfalse
+\coauthorstwo{Compañero1 Apellido}{NIA 100XXXXXX}{Gr. XX}{Compañero2 Apellido}{NIA 100XXXXXX}{Gr. XX}
+
+%%%%% Añadir dirección de email en la portada (solo válido para ti y un compañero) %%%%%
+\emailfalse
+%\correotrue
+%\emails{100346169@alumnos.uc3m.es}{correo}
+
+%%%%% Datos básicos (titulación, asignatura, título del documento) %%%%%
+\documentdata{Grado en Ingeniería Informática}{Nombre de la asignatura}{Nombre del documento}
+
+%%%%% Encabezado %%%%%
+\header
+
+%%%%% Pie de Página %%%%%
+\footer
+\pagestyle{fancy}
+
+\begin{document}
+%%%%% Portada %%%%%
+\titleMain
+
+%%%%% Índice %%%%%
+\tableofcontents 	% Añadimos índice
+\newpage 			% Después del índice, le indicamos iniciar en una página nueva
+
+%%%%% CONTENIDO DEL DOCUMENTO %%%%%
+\section{Etiqueta section}
+\p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
+quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
+vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
+veritus placerat per.}
+\subsection{Etiqueta subsection}
+\p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
+quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
+vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
+veritus placerat per.}
+\subsubsection{Etiqueta subsubsection}
+\p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
+quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
+vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
+veritus placerat per.}
+\p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
+quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
+vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
+veritus placerat per.}
+\end{document}
