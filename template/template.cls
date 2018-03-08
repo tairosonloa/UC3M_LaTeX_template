@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}														% Tells the compiler which version of LaTeX the package is for.
-\ProvidesClass{plantilla_memorias}[2016/04/21 Template for UC3M work report]	% Gives the compiler some information about your package.
+\ProvidesClass{template_memorias}[2016/04/21 Template for UC3M work report]	% Gives the compiler some information about your package.
 \LoadClass{article}																% Our template is based on article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,12 +159,12 @@
 
 	%%%% Right part of header %%%%
 	\ifcoauthorsfour
-		\rhead{\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}}	% Logo image uc3m
+		\rhead{\includegraphics[scale=0.12]{template/logo_completo_horizontal.png}}	% Logo image uc3m
 	\else
 		\rhead{
 		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
 		\begin{tabular}{c}
-		\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
+		\includegraphics[scale=0.12]{template/logo_completo_horizontal.png}	% Logo image uc3m
 		\end{tabular}}
 	\fi
 	\renewcommand{\headrulewidth}{0pt}	% To erase header line
@@ -259,7 +259,7 @@
 	\end{flushright}
 	\vspace{1cm}
 	\begin{center}
-	\includegraphics[scale=0.25]{plantilla/logo_completo_vertical.png}
+	\includegraphics[scale=0.25]{template/logo_completo_vertical.png}
 	\end{center}
 	\end{titlepage}
 	\newpage
