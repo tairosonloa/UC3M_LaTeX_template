@@ -3,10 +3,10 @@
 \LoadClass{article}																% Our template is based on article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Plantilla de estilos para memorias de prácticas UC3M %
+%               UC3M Work report template              %
 %           Universidad Carlos III de Madrid           %
-% Autor: Aitor Alonso Núñez                            %
-% Última actualización: 8 de marzo de 2018             %
+%              Author: Aitor Alonso Núñez              %
+%              Last update: March 8, 2018              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Required Packages %%%%%
@@ -130,7 +130,8 @@
 		\coauthorIIIofIII & \niaIIIofIII\\
 		\end{tabular}}
 	}
-	\else \ifcoauthorsfour
+	\fi
+	\ifcoauthorsfour
 	\lhead{
 		\textcolor{gray}{
 		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
@@ -156,7 +157,7 @@
 	\rhead{
 	\ifcoauthorsthree
 	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
-	\else
+	\fi
 	\ifcoauthorsfour % Same style as coauthorsthree
 	\includegraphics[scale=0.12]{plantilla/logo_completo_horizontal.png}	% Logo image uc3m
 	\else
@@ -208,7 +209,8 @@
 			\large{\coauthorIIIofIII} & \large{\niaIIIofIII}\\
 		\end{tabular}
 		\fi
-	\else \ifcoauthorsfour
+	\fi
+	\ifcoauthorsfour
 		\ifemail
 		\begin{tabular}{ r c r }
 			\large{\coauthorIofIV} & \large{\niaIofIV} & \large{\emailIofIV}\\
