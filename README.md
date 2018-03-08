@@ -12,6 +12,8 @@ Universidad Carlos III de Madrid and are behind their own use policy and legal r
 asks you about the template or you see people who like it, don't forget
 to tell them you got it from here ;)
 
+This template is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license](https://github.com/tairosonloa/UC3M_work_report_latex_template/blob/master/LICENSE.md).
+
 # Plantilla en LaTeX para memorias UC3M
 He creado una plantilla en LaTeX que uso para todos mis trabajos y 
 memorias en la universidad. Está inspirada en la que usamos en la
@@ -25,3 +27,5 @@ política de uso y restricciones legales.
 
 **Siéntete libre** de usarla en tus trabajos y memorias en la UC3M. Si 
 te preguntan por la plantilla o les gusta, no olvides comentarles que la has sacado de aquí ;)
+
+Esta plantilla esta bajo [licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://github.com/tairosonloa/UC3M_work_report_latex_template/blob/master/LICENSE.md).
