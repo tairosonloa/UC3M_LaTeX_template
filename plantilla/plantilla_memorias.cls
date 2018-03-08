@@ -197,9 +197,11 @@
 	\begin{flushright}
 	\ifcoauthorstwo
 		\ifemail
-		\begin{tabular}{ r r r r }
-			\large{\coauthorIofII} & \large{\niaIofII} & \large{\groupIofII} & \large{\emailIofII}\\
-			\large{\coauthorIIofII} & \large{\niaIIofII} & \large{\groupIIofII} & \large{\emailIIofII}\\
+		\begin{tabular}{ r r r }
+			\large{\coauthorIofII} & \large{\niaIofII} & \large{\groupIofII}\\
+			\multicolumn{3}{r}{\large{\emailIofII}}\\
+			\large{\coauthorIIofII} & \large{\niaIIofII} & \large{\groupIIofII}\\
+			\multicolumn{3}{r}{\large{\emailIofII}}\\
 		\end{tabular}
 		\else
 		\begin{tabular}{ r r r }
@@ -210,10 +212,13 @@
 	\fi
 	\ifcoauthorsthree
 		\ifemail
-		\begin{tabular}{ r r r r }
-			\large{\coauthorIofIII} & \large{\niaIofIII} & \large{\groupIofIII} & \large{\emailIofIII}\\
-			\large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\groupIIofIII} & \large{\emailIIofIII}\\
-			\large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\groupIIIofIII} & \large{\emailIIIofIII}\\
+		\begin{tabular}{ r r r }
+			\large{\coauthorIofIII} & \large{\niaIofIII} & \large{\groupIofIII}\\
+			\multicolumn{3}{r}{\large{\emailIofIII}}\\
+			\large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\groupIIofIII}\\
+			\multicolumn{3}{r}{\large{\emailIIofIII}}\\
+			\large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\groupIIIofIII}\\
+			\multicolumn{3}{r}{\large{\emailIIIofIII}}\\
 		\end{tabular}
 		\else
 		\begin{tabular}{ r r r }
@@ -225,11 +230,15 @@
 	\fi
 	\ifcoauthorsfour
 		\ifemail
-		\begin{tabular}{ r r r }
-			\large{\coauthorIofIV} & \large{\niaIofIV} & \large{\emailIofIV}\\
-			\large{\coauthorIIofIV} & \large{\niaIIofIV} & \large{\emailIIofIV}\\
-			\large{\coauthorIIIofIV} & \large{\niaIIIofIV} & \large{\emailIIIofIV}\\
-			\large{\coauthorIVofIV} & \large{\niaIVofIV} & \large{\emailIVofIV}\\
+		\begin{tabular}{ r r }
+			\large{\coauthorIofIV} & \large{\niaIofIV}\\
+			\multicolumn{2}{r}{\large{\emailIofIV}}\\
+			\large{\coauthorIIofIV} & \large{\niaIIofIV}\\
+			\multicolumn{2}{r}{\large{\emailIIofIV}}\\
+			\large{\coauthorIIIofIV} & \large{\niaIIIofIV}\\
+			\multicolumn{2}{r}{\large{\emailIIIofIV}}\\
+			\large{\coauthorIVofIV} & \large{\niaIVofIV}\\
+			\multicolumn{2}{r}{\large{\emailIVofIV}}\\
 		\end{tabular}
 		\else
 		\begin{tabular}{ r r }
