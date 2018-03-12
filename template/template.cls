@@ -201,7 +201,7 @@
 			\large{\coauthorIofII} & \large{\niaIofII} & \large{\groupIofII}\\
 			\multicolumn{3}{r}{\large{\emailIofII}}\\
 			\large{\coauthorIIofII} & \large{\niaIIofII} & \large{\groupIIofII}\\
-			\multicolumn{3}{r}{\large{\emailIofII}}\\
+			\multicolumn{3}{r}{\large{\emailIIofII}}\\
 		\end{tabular}
 		\else
 		\begin{tabular}{ r r r }
