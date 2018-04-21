@@ -20,7 +20,7 @@
 \RequirePackage{courier}								% To add code snippets.
 \RequirePackage{geometry}								% To define paper format and general margins.
 \RequirePackage{graphicx}								% To add images and graphics.
-\RequirePackage[spanish, es-noindentfirst]{babel}		% Language format package (Spanish).
+\RequirePackage[spanish, es-noindentfirst, es-noshorthands]{babel}		% Language format package (Spanish).
 \RequirePackage{setspace}								% Used when we modify spacing between lines.
 \RequirePackage{fancyhdr}								% So that we can add header and footer.
 \RequirePackage{titlesec}								% Useful to set title styles.
@@ -159,12 +159,12 @@
 
 	%%%% Right part of header %%%%
 	\ifcoauthorsfour
-		\rhead{\includegraphics[scale=0.12]{template/logo_completo_horizontal.png}}	% Logo image uc3m
+		\rhead{\includegraphics[scale=0.12]{../.template/logo_completo_horizontal.png}}	% Logo image uc3m
 	\else
 		\rhead{
 		\vspace*{-\baselineskip} % To remove white spaces up and down the header table
 		\begin{tabular}{c}
-		\includegraphics[scale=0.12]{template/logo_completo_horizontal.png}	% Logo image uc3m
+		\includegraphics[scale=0.12]{../.template/logo_completo_horizontal.png}	% Logo image uc3m
 		\end{tabular}}
 	\fi
 	\renewcommand{\headrulewidth}{0pt}	% To erase header line
@@ -259,7 +259,7 @@
 	\end{flushright}
 	\vspace{1cm}
 	\begin{center}
-	\includegraphics[scale=0.25]{template/logo_completo_vertical.png}
+	\includegraphics[scale=0.25]{../.template/logo_completo_vertical.png}
 	\end{center}
 	\end{titlepage}
 	\newpage
