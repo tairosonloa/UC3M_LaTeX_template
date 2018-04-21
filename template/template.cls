@@ -20,7 +20,7 @@
 \RequirePackage{courier}								% To add code snippets.
 \RequirePackage{geometry}								% To define paper format and general margins.
 \RequirePackage{graphicx}								% To add images and graphics.
-\RequirePackage[spanish, es-noindentfirst, es-noshorthands]{babel}		% Language format package (Spanish).
+\RequirePackage[spanish, es-noindentfirst, es-noshorthands, es-tabla]{babel}		% Language format package (Spanish).
 \RequirePackage{setspace}								% Used when we modify spacing between lines.
 \RequirePackage{fancyhdr}								% So that we can add header and footer.
 \RequirePackage{titlesec}								% Useful to set title styles.
