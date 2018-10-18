@@ -54,44 +54,35 @@
 \definecolor{uc3mNewBlue}{RGB}{0, 29, 133}
 
 %%%%% Some booleans to format header %%%%%
-\newif\ifcoauthorstwo
-\newif\ifcoauthorsthree
-\newif\ifcoauthorsfour
+\newif\ifauthorstwo
+\newif\ifauthorsthree
+\newif\ifauthorsfour
 \newif\ifemail
 
-%%%%% Coauthors (students), NIA and group, up to two coauthors %%%%%
-\newcommand{\coauthorstwo}[6]{
-    \def\coauthorIofII{#1}
-    \def\niaIofII{#2}
-    \def\groupIofII{#3}
-    \def\coauthorIIofII{#4}
-    \def\niaIIofII{#5}
-    \def\groupIIofII{#6}
-}
-
 %%%%% Coauthors (students), NIA and group, up to three coauthors %%%%%
-\newcommand{\coauthorsthree}[9]{
-    \def\coauthorIofIII{#1}
-    \def\niaIofIII{#2}
-    \def\groupIofIII{#3}
-    \def\coauthorIIofIII{#4}
-    \def\niaIIofIII{#5}
-    \def\groupIIofIII{#6}
-    \def\coauthorIIIofIII{#7}
-    \def\niaIIIofIII{#8}
-    \def\groupIIIofIII{#9}
+\newcommand{\authorsuptothree}[9]{
+    \def\authorI{#1}
+    \def\niaI{#2}
+    \def\groupI{#3}
+    \def\authorII{#4}
+    \def\niaII{#5}
+    \def\groupII{#6}
+    \def\authorIII{#7}
+    \def\niaIII{#8}
+    \def\groupIII{#9}
 }
 
 %%%%% Coauthors (students) with NIA and without group, up to four coauthors %%%%%
-\newcommand{\coauthorsfour}[8]{
-    \def\coauthorIofIV{#1}
+\newcommand{\authorsfour}[9]{
+    \def\authorIofIV{#1}
     \def\niaIofIV{#2}
-    \def\coauthorIIofIV{#3}
+    \def\authorIIofIV{#3}
     \def\niaIIofIV{#4}
-    \def\coauthorIIIofIV{#5}
+    \def\authorIIIofIV{#5}
     \def\niaIIIofIV{#6}
-    \def\coauthorIVofIV{#7}
+    \def\authorIVofIV{#7}
     \def\niaIVofIV{#8}
+    \def\groupIV{#9}
 }
 
 %%%%% Basic data about document (degree, subject, document title, campus and page number custom text) %%%%%
@@ -104,61 +95,52 @@
 }
 
 %%%%% Email addresses of document coauthors %%%%
-\newcommand{\emailstwo}[2]{
-    \def\emailIofII{#1}
-    \def\emailIIofII{#2}
-}
-\newcommand{\emailsthree}[3]{
-    \def\emailIofIII{#1}
-    \def\emailIIofIII{#2}
-    \def\emailIIIofIII{#3}
-}
-\newcommand{\emailsfour}[4]{
-    \def\emailIofIV{#1}
-    \def\emailIIofIV{#2}
-    \def\emailIIIofIV{#3}
-    \def\emailIVofIV{#4}
+\newcommand{\emails}[4]{
+    \def\emailI{#1}
+    \def\emailII{#2}
+    \def\emailIII{#3}
+    \def\emailIV{#4}
 }
 
 %%%%% Header %%%%%
 \newcommand{\header}[0]{
     %%%% Left part of header %%%%
-    \ifcoauthorstwo
+    \ifauthorstwo
     \lhead{
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{lll}
-        \coauthorIofII & \niaIofII\\
-        \coauthorIIofII & \niaIIofII\\
+        \authorI & \niaI\\
+        \authorII & \niaII\\
         \end{tabular}}
     }
     \fi
-    \ifcoauthorsthree
+    \ifauthorsthree
     \lhead{
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{ll}
-        \coauthorIofIII & \niaIofIII\\
-        \coauthorIIofIII & \niaIIofIII\\
-        \coauthorIIIofIII & \niaIIIofIII\\
+        \authorI & \niaI\\
+        \authorII & \niaII\\
+        \authorIII & \niaIII\\
         \end{tabular}}
     }
     \fi
-    \ifcoauthorsfour
+    \ifauthorsfour
     \lhead{
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{ll}
-        \coauthorIofIV & \niaIofIV\\
-        \coauthorIIofIV & \niaIIofIV\\
-        \coauthorIIIofIV & \niaIIIofIV\\
-        \coauthorIVofIV & \niaIVofIV\\
+        \authorIofIV & \niaIofIV\\
+        \authorIIofIV & \niaIIofIV\\
+        \authorIIIofIV & \niaIIIofIV\\
+        \authorIVofIV & \niaIVofIV\\
         \end{tabular}}
     }
     \fi
 
     %%%% Right part of header %%%%
-    \ifcoauthorsfour
+    \ifauthorsfour
         \rhead{\includegraphics[scale=0.12]{template/logo_completo_horizontal.png}} % Logo image uc3m
     \else
         \rhead{
@@ -195,57 +177,59 @@
     \end{center}
     \vspace{5mm}
     \begin{flushright}
-    \ifcoauthorstwo
+    \ifauthorstwo
         \ifemail
         \begin{tabular}{ r r r }
-            \large{\coauthorIofII} & \large{\niaIofII} & \large{\groupIofII}\\
-            \multicolumn{3}{r}{\large{\emailIofII}}\\
-            \large{\coauthorIIofII} & \large{\niaIIofII} & \large{\groupIIofII}\\
-            \multicolumn{3}{r}{\large{\emailIIofII}}\\
+            \large{\authorI} & \large{\niaI} & \large{\groupI}\\
+            \multicolumn{3}{r}{\large{\emailI}}\\
+            \large{\authorII} & \large{\niaII} & \large{\groupII}\\
+            \multicolumn{3}{r}{\large{\emailII}}\\
         \end{tabular}
         \else
         \begin{tabular}{ r r r }
-            \large{\coauthorIofII} & \large{\niaIofII} & \large{\groupIofII}\\
-            \large{\coauthorIIofII} & \large{\niaIIofII} & \large{\groupIIofII}\\
+            \large{\authorI} & \large{\niaI} & \large{\groupI}\\
+            \large{\authorII} & \large{\niaII} & \large{\groupII}\\
         \end{tabular}
         \fi
     \fi
-    \ifcoauthorsthree
+    \ifauthorsthree
         \ifemail
         \begin{tabular}{ r r r }
-            \large{\coauthorIofIII} & \large{\niaIofIII} & \large{\groupIofIII}\\
-            \multicolumn{3}{r}{\large{\emailIofIII}}\\
-            \large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\groupIIofIII}\\
-            \multicolumn{3}{r}{\large{\emailIIofIII}}\\
-            \large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\groupIIIofIII}\\
-            \multicolumn{3}{r}{\large{\emailIIIofIII}}\\
+            \large{\authorI} & \large{\niaI} & \large{\groupI}\\
+            \multicolumn{3}{r}{\large{\emailI}}\\
+            \large{\authorII} & \large{\niaII} & \large{\groupII}\\
+            \multicolumn{3}{r}{\large{\emailII}}\\
+            \large{\authorIII} & \large{\niaIII} & \large{\groupIII}\\
+            \multicolumn{3}{r}{\large{\emailIII}}\\
         \end{tabular}
         \else
         \begin{tabular}{ r r r }
-            \large{\coauthorIofIII} & \large{\niaIofIII} & \large{\groupIofIII}\\
-            \large{\coauthorIIofIII} & \large{\niaIIofIII} & \large{\groupIIofIII}\\
-            \large{\coauthorIIIofIII} & \large{\niaIIIofIII} & \large{\groupIIIofIII}\\
+            \large{\authorI} & \large{\niaI} & \large{\groupI}\\
+            \large{\authorII} & \large{\niaII} & \large{\groupII}\\
+            \large{\authorIII} & \large{\niaIII} & \large{\groupIII}\\
         \end{tabular}
         \fi
     \fi
-    \ifcoauthorsfour
+    \ifauthorsfour
         \ifemail
         \begin{tabular}{ r r }
-            \large{\coauthorIofIV} & \large{\niaIofIV}\\
-            \multicolumn{2}{r}{\large{\emailIofIV}}\\
-            \large{\coauthorIIofIV} & \large{\niaIIofIV}\\
-            \multicolumn{2}{r}{\large{\emailIIofIV}}\\
-            \large{\coauthorIIIofIV} & \large{\niaIIIofIV}\\
-            \multicolumn{2}{r}{\large{\emailIIIofIV}}\\
-            \large{\coauthorIVofIV} & \large{\niaIVofIV}\\
-            \multicolumn{2}{r}{\large{\emailIVofIV}}\\
+            \multicolumn{2}{r}{\large{\groupIV{}}}\\
+            \large{\authorIofIV} & \large{\niaIofIV}\\
+            \multicolumn{2}{r}{\large{\emailI}}\\
+            \large{\authorIIofIV} & \large{\niaIIofIV}\\
+            \multicolumn{2}{r}{\large{\emailII}}\\
+            \large{\authorIIIofIV} & \large{\niaIIIofIV}\\
+            \multicolumn{2}{r}{\large{\emailIII}}\\
+            \large{\authorIVofIV} & \large{\niaIVofIV}\\
+            \multicolumn{2}{r}{\large{\emailIV}}\\
         \end{tabular}
         \else
         \begin{tabular}{ r r }
-            \large{\coauthorIofIV} & \large{\niaIofIV}\\
-            \large{\coauthorIIofIV} & \large{\niaIIofIV}\\
-            \large{\coauthorIIIofIV} & \large{\niaIIIofIV}\\
-            \large{\coauthorIVofIV} & \large{\niaIVofIV}\\
+            \multicolumn{2}{r}{\large{\groupIV{}}}\\
+            \large{\authorIofIV} & \large{\niaIofIV}\\
+            \large{\authorIIofIV} & \large{\niaIIofIV}\\
+            \large{\authorIIIofIV} & \large{\niaIIIofIV}\\
+            \large{\authorIVofIV} & \large{\niaIVofIV}\\
         \end{tabular}
         \fi
     \fi
