@@ -1,55 +1,55 @@
 \documentclass[10pt, english, pdftex]{template/template}
-% \documentclass[10pt, spanish, pdftex]{template/template}	
+% \documentclass[10pt, spanish, pdftex]{template/template}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               UC3M Work report template              %
 %           Universidad Carlos III de Madrid           %
 %              Author: Aitor Alonso Núñez              %
-%              Last update: March 8, 2018              %
+%              Last update: October 2018               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Preamble %%%%%
-\usepackage{fancyhdr}				% To add header and footer
-\usepackage{graphicx}				% To add images
-\usepackage{caption}				% To add captions
-\usepackage{subcaption}				% To add subcaptions
-\usepackage{lipsum}					% Example Lorem ipsum text
-\usepackage[hidelinks]{hyperref}	% Index elements works as cross references. Also functional links to internet pages
-\usepackage{nameref}				% Allow to add labels with \label{name} which can be reference with \nameref{name}
-\author{Aitor Alonso Núñez}			% This is me!
+\usepackage{fancyhdr}               % To add header and footer
+\usepackage{graphicx}               % To add images
+\usepackage{caption}                % To add captions
+\usepackage{subcaption}             % To add subcaptions
+\usepackage{lipsum}                 % Example Lorem ipsum text
+\usepackage[hidelinks]{hyperref}    % Index elements works as cross references. Also functional links to internet pages
+\usepackage{nameref}                % Allow to add labels with \label{name} which can be reference with \nameref{name}
+\author{Aitor Alonso Núñez}         % This is me!
 
 %%%%% Coauthors info %%%%%
 %%[1-2] If you want to show coauthors email address on the title page, enable \emailtrue. Otherwise, enable \emailfalse
 \emailtrue
-% \emailfalse
+%\emailfalse
 %% If coauthors are between 1 and 2 uncomment these options. Comment it otherwise.
 %% You can leave empty keys {} if you need to.
-\coauthorstwotrue		% coauthors two = true
-\coauthorsthreefalse	% coauthors three = false
-\coauthorsfourfalse		% coauthors four = false
+\coauthorstwotrue       % coauthors two = true
+\coauthorsthreefalse    % coauthors three = false
+\coauthorsfourfalse     % coauthors four = false
 \coauthorstwo{Name1 Lastname1}{NIA 100XXXXXX}{Gr. XX}{Name2 Lastname2}{NIA 100XXXXXX}{Gr. XX}
 %%[3] If you enabled \emailtrue, uncomment the option below
 \emailstwo{email1@domain.tld}{email2@domain.tld}
 
 %% If coauthors are between 1 and 2 uncomment these options. Comment it otherwise.
 %% You can leave empty keys {} if you need to.
-% \coauthorstwofalse		% coauthors two = false
-% \coauthorsthreetrue		% coauthors three = true
-% \coauthorsfourfalse		% coauthors four = false
-% \coauthorsthree{Name1 Lastname1}{NIA 100XXXXXX}{Gr. XX}{Name2 Lastname2}{NIA 100XXXXXX}{Gr. XX}{Name3 Lastname3}{NIA 100XXXXXX}{Gr. XX}
+%\coauthorstwofalse    % coauthors two = false
+%\coauthorsthreetrue   % coauthors three = true
+%\coauthorsfourfalse   % coauthors four = false
+%\coauthorsthree{Name1 Lastname1}{NIA 100XXXXXX}{Gr. XX}{Name2 Lastname2}{NIA 100XXXXXX}{Gr. XX}{Name3 Lastname3}{NIA 100XXXXXX}{Gr. XX}
 %% If you want to show on the title page the email address of these coauthors uncomment the next options
 %% and comment \emailfalse. In other case, comment everything except \emailfalse
-% \emailsthree{email1@domain.tld}{email2@domain.tld}{email3@domain.tld}
+%\emailsthree{email1@domain.tld}{email2@domain.tld}{email3@domain.tld}
 
 %%[4] If coauthors are between 1 and 2 uncomment these options. Comment it otherwise.
 %% You can leave empty keys {} if you need to.
-% \coauthorstwofalse		% coauthors two = false
-% \coauthorsthreefalse		% coauthors three = false
-% \coauthorsfourtrue		% coauthors four = true
-% \coauthorsfour{Name1 Lastname1}{NIA 100XXXXXX}{Name2 Lastname2}{NIA 100XXXXXX}{Name3 Lastname3}{NIA 100XXXXXX}{Name4 Lastname4}{NIA 100XXXXXX}
+%\coauthorstwofalse    % coauthors two = false
+%\coauthorsthreefalse  % coauthors three = false
+%\coauthorsfourtrue    % coauthors four = true
+%\coauthorsfour{Name1 Lastname1}{NIA 100XXXXXX}{Name2 Lastname2}{NIA 100XXXXXX}{Name3 Lastname3}{NIA 100XXXXXX}{Name4 Lastname4}{NIA 100XXXXXX}
 %% If you want to show on the title page the email address of these coauthors uncomment the next options
 %% and comment \emailfalse. In other case, comment everything except \emailfalse
-% \emailsfour{email1@domain.tld}{email2@domain.tld}{email3@domain.tld}{email4@domain.tld}
+%\emailsfour{email1@domain.tld}{email2@domain.tld}{email3@domain.tld}{email4@domain.tld}
 
 
 %%%%% Basic data about the document (Degree, subject, title, campus, page number custom text) %%%%%
@@ -65,10 +65,10 @@
 \titleMain
 
 %%%%% Index %%%%%
-\tableofcontents 	% We add the index
-\newpage 			% And before index we start on a new page
+\tableofcontents    % We add the index
+\newpage            % And before index we start on a new page
 
-%%%%% CONTENIDO DEL DOCUMENTO %%%%%
+%%%%% DOCUMENT CONTENT %%%%%
 %% VERY IMPORTANT!!! On the first line of this .tex file, select Spanish or English language to coincide with document text language
 \section{Section label}
 \p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
