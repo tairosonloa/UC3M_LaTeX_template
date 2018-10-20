@@ -14,7 +14,12 @@
 \usepackage{caption}                % To add captions
 \usepackage{subcaption}             % To add subcaptions
 \usepackage{lipsum}                 % Example Lorem ipsum text
-\usepackage[hidelinks]{hyperref}    % Index elements works as cross references. Also functional links to internet pages
+\usepackage[
+    hidelinks,                      % Remove borders from links and refrences
+    colorlinks=true,                % Links and references have colors
+    allcolors=uc3mNewBlue,          % Set links and references color
+    linktoc=all]                    % Title and page number of table of contents as symlink
+    {hyperref}                      % Index elements works as cross references. Also functional links to internet pages
 \usepackage{nameref}                % Allow to add labels with \label{name} which can be reference with \nameref{name}
 \author{Aitor Alonso Núñez}         % This is me! You should write here your name (for PDF metadata)
 
@@ -50,12 +55,15 @@
 \titleMain
 
 %%%%% Index %%%%%
-\tableofcontents    % We add the index
-\newpage            % And before index we start on a new page
+{\hypersetup{linkcolor=black}   % References/links on the index will remain black color
+\tableofcontents\newpage        % Index of the document
+% \listoffigures\newpage          % Index of pictures
+% \listoftables\newpage           % Index of tables
+}
 
 %%%%% DOCUMENT CONTENT %%%%%
 %% VERY IMPORTANT!!! On the first line of this .tex file, select Spanish or English language to coincide with document text language
-\section{Section label}
+\section{Section label}\label{subsubsection_label}
 \p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
 quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
@@ -65,7 +73,7 @@ veritus placerat per.}
 quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
 veritus placerat per.}
-\subsubsection{Subsubsection label}
+\subsubsection{Subsubsection label}\label{subsubsection_label}
 \p{Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
 quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
@@ -74,4 +82,7 @@ veritus placerat per.}
 quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
 veritus placerat per.}
+\p{This is a reference to the \nameref{subsubsection_label}}
+\p{This is an \href{https://github.com/tairosonloa/UC3M_LaTeX_template}{hyperlink to my GitHub repository}.}
+\p{This is an url: \url{https://github.com/tairosonloa/UC3M_LaTeX_template}}
 \end{document}
