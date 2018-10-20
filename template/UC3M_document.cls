@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}                                                    % Tells the compiler which version of LaTeX the package is for.
-\ProvidesClass{template_memorias}[2016/04/21 Template for UC3M work report] % Gives the compiler some information about your package.
+\ProvidesClass{UC3M_document}[2016/04/21 Template for UC3M work report]     % Gives the compiler some information about your package.
 \LoadClass{article}                                                         % Our template is based on article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
