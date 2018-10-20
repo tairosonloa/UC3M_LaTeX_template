@@ -1,0 +1,88 @@
+\documentclass[10pt, english, pdftex]{template/UC3M_slides}
+% \documentclass[10pt, spanish, pdftex]{template/UC3M_slides}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  UC3M slides template                %
+%           Universidad Carlos III de Madrid           %
+%              Author: Aitor Alonso Núñez              %
+%              Last update: October 2018               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% Preamble %%%%%
+\author{Aitor Alonso Núñez}         % This is me! You should write here your name (for PDF metadata)
+\usepackage{fancybox}
+
+%%%%% About the authors (will be used on title page and header) %%%%%
+
+%%% Indicate the number of authors by uncommenting the right option.
+% \authorstwotrue     % 1 or 2 authors
+% \authorsthreetrue   % 3 authors
+\authorsfourtrue    % 4 authors
+
+%%% Fill with the authors data. You can leave empty keys {} if you need to and also if you provide more info that number of authors indicated it will be ignored.
+% If you selected \authorstwotrue or \authorsthreetrue (1 to 3 authors)
+\authorsuptothree{Name1 Lastname1}{NIA 100XXXXXX}{Gr. XX}{Name2 Lastname2}{NIA 100XXXXXX}{Gr. XX}{Name3 Lastname3}{NIA 100XXXXXX}{Gr. XX}
+% If you selected \coauthorsfourtrue (4 authors)
+\authorsfour{Name1 Lastname1}{NIA 100XXXXXX}{Name2 Lastname2}{NIA 100XXXXXX}{Name3 Lastname3}{NIA 100XXXXXX}{Name4 Lastname4}{NIA 100XXXXXX}{Group XX}
+
+%%% If you want to show coauthors email address on the title page, uncomment \emailtrue. Comment it otherwise.
+% \emailtrue
+% You can leave empty keys {} if you need to and also if you provide more info that number of authors indicated or \emailtrue is commented it will be ignored.
+\emails{email1@domain.tld}{email2@domain.tld}{email3@domain.tld}{email4@domain.tld}
+
+%%%%% Basic data about the document (Degree, subject, title, campus, page number custom text) %%%%%
+\documentdata{Degree}{Subject}{Slides title}
+
+%%% Add current index at the begining of every section
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection,subsectionstyle=shaded]
+    \end{frame}
+}
+
+%%% Add current index at the begining of every subsection
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection,currentsubsection,subsubsectionstyle=shaded]
+    \end{frame}
+}
+
+
+%%%%% SLIDES %%%%%
+%% VERY IMPORTANT!!! On the first line of this .tex file, select Spanish or English language to coincide with slides text language
+\begin{document}
+\maketitle % Title slide
+
+% Table of contents slide
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Section}
+\begin{frame}
+    \frametitle{Frame title}
+    \framesubtitle{Frame subtitle}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet odio sed enim condimentum maximus sagittis vel nisl. Ut commodo mattis eros quis consequat. Nulla tincidunt fermentum neque non tempor. Donec suscipit ultrices interdum. In hac habitasse platea dictumst. Donec eget rhoncus enim. Vivamus rutrum lobortis viverra.
+\end{frame}
+
+\subsection{Subsection}
+\begin{frame}
+    \frametitle{Frame title}
+    \framesubtitle{Frame subtitle}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet odio sed enim condimentum maximus sagittis vel nisl. Ut commodo mattis eros quis consequat. Nulla tincidunt fermentum neque non tempor. Donec suscipit ultrices interdum. In hac habitasse platea dictumst. Donec eget rhoncus enim. Vivamus rutrum lobortis viverra.
+\end{frame}
+
+\subsubsection{Subsubsection}
+\begin{frame}
+    \frametitle{Frame title}
+    \framesubtitle{Frame subtitle}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet odio sed enim condimentum maximus sagittis vel nisl. Ut commodo mattis eros quis consequat. Nulla tincidunt fermentum neque non tempor. Donec suscipit ultrices interdum. In hac habitasse platea dictumst. Donec eget rhoncus enim. Vivamus rutrum lobortis viverra.
+\end{frame}
+
+\maketitle % Title slide
+\end{document}
