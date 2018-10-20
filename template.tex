@@ -55,9 +55,11 @@
 \titleMain
 
 %%%%% Index %%%%%
-\tableofcontents        % We add the index
-\newpage                % And before index we start on a new page
-% \listoffigures\newpage  % Index of pictures
+{\hypersetup{linkcolor=black}   % References/links on the index will remain black color
+\tableofcontents\newpage        % Index of the document
+% \listoffigures\newpage          % Index of pictures
+% \listoftables\newpage           % Index of tables
+}
 
 %%%%% DOCUMENT CONTENT %%%%%
 %% VERY IMPORTANT!!! On the first line of this .tex file, select Spanish or English language to coincide with document text language
@@ -81,6 +83,6 @@ quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus sense
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
 veritus placerat per.}
 \p{This is a reference to the \nameref{subsubsection_label}}
-\p{This is an \href{https://github.com/tairosonloa/UC3M_work_report_latex_template}{hyperlink to my GitHub repository}.}
-\p{This is an url: \url{https://github.com/tairosonloa/UC3M_work_report_latex_template}}
+\p{This is an \href{https://github.com/tairosonloa/UC3M_LaTeX_template}{hyperlink to my GitHub repository}.}
+\p{This is an url: \url{https://github.com/tairosonloa/UC3M_LaTeX_template}}
 \end{document}
