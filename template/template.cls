@@ -242,25 +242,29 @@
     \newpage
 }
 
+%%%%% Paragraph style %%%%%
+% \newcommand{\p}{\justify\mdseries\normalsize{\hspace{0cm}}} % \justify\mdseries\normalsize{\hspace{0cm}}}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.75em}
+
+
 %%%%% Section style %%%%%
 \titleformat{\section}{
-    \large\bfseries\color{uc3mNewBlue}{}}
+    \large\bfseries\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
       [\color{uc3mNewBlue}{\titlerule[2pt]}\vspace{0.3cm}]
-     
+
+
 %%%%% Subsection style %%%%%
 \titleformat{\subsection}{
-    \normalsize\bfseries\color{uc3mNewBlue}{}}
+    \normalsize\bfseries\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
 
 
 %%%%% Subsubsection style %%%%%
 \titleformat{\subsubsection}{
-    \normalsize\color{uc3mNewBlue}{}}
+    \normalsize\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
-      
-%%%%% Text style %%%%%
-\newcommand{\p}{\justify\mdseries\normalsize{\hspace{0cm}}} % \justify\mdseries\normalsize{\hspace{0cm}}}
