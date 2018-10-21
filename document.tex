@@ -9,26 +9,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Preamble %%%%%
-\usepackage{fancyhdr}               % To add header and footer
-\usepackage{graphicx}               % To add images
-\usepackage{caption}                % To add captions
-\usepackage{subcaption}             % To add subcaptions
-\usepackage{lipsum}                 % Example Lorem ipsum text
-\usepackage[
-    hidelinks,                      % Remove borders from links and refrences
-    colorlinks=true,                % Links and references have colors
-    allcolors=uc3mNewBlue,          % Set links and references color
-    linktoc=all]                    % Title and page number of table of contents as symlink
-    {hyperref}                      % Index elements works as cross references. Also functional links to internet pages
-\usepackage{nameref}                % Allow to add labels with \label{name} which can be reference with \nameref{name}
 \author{Aitor Alonso Núñez}         % This is me! You should write here your name (for PDF metadata)
-
 %%%%% About the authors (will be used on title page and header) %%%%%
 
 %%% Indicate the number of authors by uncommenting the right option.
-\authorstwotrue     % 1 or 2 authors
+% \authorstwotrue     % 1 or 2 authors
 % \authorsthreetrue   % 3 authors
-% \authorsfourtrue    % 4 authors
+\authorsfourtrue    % 4 authors
 
 %%% Fill with the authors data. You can leave empty keys {} if you need to and also if you provide more info that number of authors indicated it will be ignored.
 % If you selected \authorstwotrue or \authorsthreetrue (1 to 3 authors)
@@ -63,7 +50,7 @@
 
 %%%%% DOCUMENT CONTENT %%%%%
 %% VERY IMPORTANT!!! On the first line of this .tex file, select Spanish or English language to coincide with document text language
-\section{Section label}
+\section{Section label}\label{section_label}
 Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
 quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
@@ -75,7 +62,7 @@ quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus sense
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
 veritus placerat per.
 
-\subsubsection{Subsubsection label}\label{subsubsection_label}
+\subsubsection{Subsubsection label}
 Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur,
 quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem,
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
@@ -86,7 +73,7 @@ quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus sense
 vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit
 veritus placerat per.
 
-This is a reference to the \nameref{subsubsection_label}
+This is a reference to the \nameref{section_label}
 
 This is an \href{https://github.com/tairosonloa/UC3M_LaTeX_template}{hyperlink to my GitHub repository}.
 

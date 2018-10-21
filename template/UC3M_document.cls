@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}                                                    % Tells the compiler which version of LaTeX the package is for.
-\ProvidesClass{UC3M_document}[2016/04/21 Template for UC3M work report]     % Gives the compiler some information about your package.
+\ProvidesClass{UC3M_document}[Template for UC3M work report]                % Gives the compiler some information about your package.
 \LoadClass{article}                                                         % Our template is based on article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,11 +12,10 @@
 %%%%% Required Packages %%%%%
 \RequirePackage[pdftex, usenames, dvipsnames]{color}                            % So that we can define colors and change color fonts.
 \RequirePackage[table,xcdraw]{xcolor}                                           % So that we can color tables cells, row, columns...
-\RequirePackage{xcolor}                                                         % More colors
 \RequirePackage{ragged2e}                                                       % To allign some lines.
 \RequirePackage[T1]{fontenc}                                                    % Because we use vectorial fonts (type-1).
 \usepackage[scaled]{helvet}                                                     % Helvet font as is the UC3M corporate identity font
-\renewcommand\familydefault{\sfdefault}                                         %
+\renewcommand\familydefault{\sfdefault}                                         % Set default font
 \RequirePackage{courier}                                                        % To add code snippets.
 \RequirePackage{geometry}                                                       % To define paper format and general margins.
 \RequirePackage{graphicx}                                                       % To add images and graphics.
@@ -30,11 +29,20 @@
 \RequirePackage{multirow}                                                       % So that we can merge cells in tables
 \RequirePackage{xkeyval}                                                        % Macros
 \RequirePackage{textcomp}                                                       % To write symbols like €
+\RequirePackage{caption}                                                        % To add captions
+\RequirePackage{subcaption}                                                     % To add subcaptions
+\RequirePackage[
+    hidelinks,                      % Remove borders from links and refrences
+    colorlinks=true,                % Links and references have colors
+    allcolors=uc3mNewBlue,          % Set links and references color
+    linktoc=all]                    % Title and page number of table of contents as symlink
+    {hyperref}                      % Index elements works as cross references. Also functional links to internet pages
+\RequirePackage{nameref}                % Allow to add labels with \label{name} which can be reference with \nameref{name}
 
 %%%%% Setting margins %%%%%
 \setlength{\headheight}{50pt}
 \setlength{\footskip}{30pt}
-\geometry{verbose,a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
+\geometry{a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
 
 \onehalfspace                   % Spacing between lines.
 \setlength{\parindent}{0cm}     % Indent length.
@@ -53,7 +61,7 @@
 % - New corporative identity
 \definecolor{uc3mNewBlue}{RGB}{0, 29, 133}
 
-%%%%% Some booleans to format header %%%%%
+%%%%% Some booleans to format header and title page %%%%%
 \newif\ifauthorstwo
 \newif\ifauthorsthree
 \newif\ifauthorsfour
@@ -72,7 +80,7 @@
     \def\groupIII{#9}
 }
 
-%%%%% Coauthors (students) with NIA and without group, up to four coauthors %%%%%
+%%%%% Coauthors (students) with NIA and without group, four coauthors %%%%%
 \newcommand{\authorsfour}[9]{
     \def\authorIofIV{#1}
     \def\niaIofIV{#2}
@@ -107,27 +115,30 @@
     %%%% Left part of header %%%%
     \ifauthorstwo
     \lhead{
+        \hspace*{-1em}
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{lll}
         \authorI & \niaI\\
-        \authorII & \niaII\\
+        \authorII & \niaII
         \end{tabular}}
     }
     \fi
     \ifauthorsthree
     \lhead{
+        \hspace*{-1em}
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{ll}
         \authorI & \niaI\\
         \authorII & \niaII\\
-        \authorIII & \niaIII\\
+        \authorIII & \niaIII
         \end{tabular}}
     }
     \fi
     \ifauthorsfour
     \lhead{
+        \hspace*{-1em}
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{ll}
@@ -164,7 +175,6 @@
 %%%%% Title page %%%%%
 \newcommand{\titleMain}[0]{
     \begin{titlepage}
-    ~\\[0.1 cm]
     \begin{center}
     \textcolor{uc3mNewBlue}{\rule{\textwidth}{3px}} 
     {\Huge {\textcolor{gray}{\fontseries{bx}{\selectfont \documenttitle}}}
@@ -183,12 +193,12 @@
             \large{\authorI} & \large{\niaI} & \large{\groupI}\\
             \multicolumn{3}{r}{\large{\emailI}}\\
             \large{\authorII} & \large{\niaII} & \large{\groupII}\\
-            \multicolumn{3}{r}{\large{\emailII}}\\
+            \multicolumn{3}{r}{\large{\emailII}}
         \end{tabular}
         \else
         \begin{tabular}{ r r r }
             \large{\authorI} & \large{\niaI} & \large{\groupI}\\
-            \large{\authorII} & \large{\niaII} & \large{\groupII}\\
+            \large{\authorII} & \large{\niaII} & \large{\groupII}
         \end{tabular}
         \fi
     \fi
@@ -200,20 +210,20 @@
             \large{\authorII} & \large{\niaII} & \large{\groupII}\\
             \multicolumn{3}{r}{\large{\emailII}}\\
             \large{\authorIII} & \large{\niaIII} & \large{\groupIII}\\
-            \multicolumn{3}{r}{\large{\emailIII}}\\
+            \multicolumn{3}{r}{\large{\emailIII}}
         \end{tabular}
         \else
         \begin{tabular}{ r r r }
             \large{\authorI} & \large{\niaI} & \large{\groupI}\\
             \large{\authorII} & \large{\niaII} & \large{\groupII}\\
-            \large{\authorIII} & \large{\niaIII} & \large{\groupIII}\\
+            \large{\authorIII} & \large{\niaIII} & \large{\groupIII}
         \end{tabular}
         \fi
     \fi
     \ifauthorsfour
         \ifemail
         \begin{tabular}{ r r }
-            \multicolumn{2}{r}{\large{\groupIV{}}}\\
+            \multicolumn{2}{r}{\large{\groupIV}}\\
             \large{\authorIofIV} & \large{\niaIofIV}\\
             \multicolumn{2}{r}{\large{\emailI}}\\
             \large{\authorIIofIV} & \large{\niaIIofIV}\\
@@ -221,15 +231,15 @@
             \large{\authorIIIofIV} & \large{\niaIIIofIV}\\
             \multicolumn{2}{r}{\large{\emailIII}}\\
             \large{\authorIVofIV} & \large{\niaIVofIV}\\
-            \multicolumn{2}{r}{\large{\emailIV}}\\
+            \multicolumn{2}{r}{\large{\emailIV}}
         \end{tabular}
         \else
         \begin{tabular}{ r r }
-            \multicolumn{2}{r}{\large{\groupIV{}}}\\
+            \multicolumn{2}{r}{\large{\groupIV}}\\
             \large{\authorIofIV} & \large{\niaIofIV}\\
             \large{\authorIIofIV} & \large{\niaIIofIV}\\
             \large{\authorIIIofIV} & \large{\niaIIIofIV}\\
-            \large{\authorIVofIV} & \large{\niaIVofIV}\\
+            \large{\authorIVofIV} & \large{\niaIVofIV}
         \end{tabular}
         \fi
     \fi
@@ -245,7 +255,7 @@
 %%%%% Paragraph style %%%%%
 % \newcommand{\p}{\justify\mdseries\normalsize{\hspace{0cm}}} % \justify\mdseries\normalsize{\hspace{0cm}}}
 \setlength{\parindent}{0em}
-\setlength{\parskip}{0.75em}
+\setlength{\parskip}{1em}
 
 
 %%%%% Section style %%%%%
@@ -253,7 +263,7 @@
     \large\bfseries\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
-      [\color{uc3mNewBlue}{\titlerule[2pt]}\vspace{0.3cm}]
+      [\color{uc3mNewBlue}{\titlerule[2pt]}\vspace{-0.5em}]
 
 
 %%%%% Subsection style %%%%%
@@ -261,6 +271,7 @@
     \normalsize\bfseries\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
+      [\vspace{-1em}]
 
 
 %%%%% Subsubsection style %%%%%
@@ -268,3 +279,4 @@
     \normalsize\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
+      [\vspace{-1em}]
