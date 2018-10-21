@@ -31,11 +31,18 @@
 \RequirePackage{textcomp}                                                       % To write symbols like €
 \RequirePackage{caption}                                                        % To add captions
 \RequirePackage{subcaption}                                                     % To add subcaptions
+\RequirePackage[
+    hidelinks,                      % Remove borders from links and refrences
+    colorlinks=true,                % Links and references have colors
+    allcolors=uc3mNewBlue,          % Set links and references color
+    linktoc=all]                    % Title and page number of table of contents as symlink
+    {hyperref}                      % Index elements works as cross references. Also functional links to internet pages
+\RequirePackage{nameref}                % Allow to add labels with \label{name} which can be reference with \nameref{name}
 
 %%%%% Setting margins %%%%%
 \setlength{\headheight}{50pt}
 \setlength{\footskip}{30pt}
-\geometry{verbose,a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
+\geometry{a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
 
 \onehalfspace                   % Spacing between lines.
 \setlength{\parindent}{0cm}     % Indent length.
@@ -108,6 +115,7 @@
     %%%% Left part of header %%%%
     \ifauthorstwo
     \lhead{
+        \hspace*{-1em}
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{lll}
@@ -118,6 +126,7 @@
     \fi
     \ifauthorsthree
     \lhead{
+        \hspace*{-1em}
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{ll}
@@ -129,13 +138,14 @@
     \fi
     \ifauthorsfour
     \lhead{
+        \hspace*{-1em}
         \textcolor{gray}{
         \vspace*{-\baselineskip} % To remove white spaces up and down the header table
         \begin{tabular}{ll}
         \authorIofIV & \niaIofIV\\
         \authorIIofIV & \niaIIofIV\\
         \authorIIIofIV & \niaIIIofIV\\
-        \authorIVofIV & \niaIVofIV
+        \authorIVofIV & \niaIVofIV\\
         \end{tabular}}
     }
     \fi
@@ -245,7 +255,7 @@
 %%%%% Paragraph style %%%%%
 % \newcommand{\p}{\justify\mdseries\normalsize{\hspace{0cm}}} % \justify\mdseries\normalsize{\hspace{0cm}}}
 \setlength{\parindent}{0em}
-\setlength{\parskip}{0.75em}
+\setlength{\parskip}{1em}
 
 
 %%%%% Section style %%%%%
@@ -253,7 +263,7 @@
     \large\bfseries\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
-      [\color{uc3mNewBlue}{\titlerule[2pt]}\vspace{0.3cm}]
+      [\color{uc3mNewBlue}{\titlerule[2pt]}\vspace{-0.5em}]
 
 
 %%%%% Subsection style %%%%%
@@ -261,6 +271,7 @@
     \normalsize\bfseries\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
+      [\vspace{-1em}]
 
 
 %%%%% Subsubsection style %%%%%
@@ -268,3 +279,4 @@
     \normalsize\color{uc3mNewBlue}{}\setlength{\parskip}{0em}}
     {}{0em}
       {}
+      [\vspace{-1em}]
