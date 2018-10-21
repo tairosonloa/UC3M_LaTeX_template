@@ -116,6 +116,7 @@
         \begin{beamercolorbox}[sep=8pt,center,rounded=true]{title}
             \huge{\fontseries{bx}{\selectfont\documenttitle}}
         \end{beamercolorbox}
+        ~\\[0.1 cm]
         \large\mdseries\textcolor{gray}{
         \textbf{\studyname}
         \textbf{\\\subjectname}}
@@ -127,12 +128,12 @@
             \footnotesize{\authorI} & \footnotesize{\niaI} & \footnotesize{\groupI}\\
             \multicolumn{3}{r}{\footnotesize{\emailI}}\\
             \footnotesize{\authorII} & \footnotesize{\niaII} & \footnotesize{\groupII}\\
-            \multicolumn{3}{r}{\footnotesize{\emailII}}\\
+            \multicolumn{3}{r}{\footnotesize{\emailII}}
         \end{tabular}
         \else
         \begin{tabular}{ r r r }
             \footnotesize{\authorI} & \footnotesize{\niaI} & \footnotesize{\groupI}\\
-            \footnotesize{\authorII} & \footnotesize{\niaII} & \footnotesize{\groupII}\\
+            \footnotesize{\authorII} & \footnotesize{\niaII} & \footnotesize{\groupII}
         \end{tabular}
         \fi
     \fi
@@ -144,20 +145,20 @@
             \footnotesize{\authorII} & \footnotesize{\niaII} & \footnotesize{\groupII}\\
             \multicolumn{3}{r}{\footnotesize{\emailII}}\\
             \footnotesize{\authorIII} & \footnotesize{\niaIII} & \footnotesize{\groupIII}\\
-            \multicolumn{3}{r}{\footnotesize{\emailIII}}\\
+            \multicolumn{3}{r}{\footnotesize{\emailIII}}
         \end{tabular}
         \else
         \begin{tabular}{ r r r }
             \footnotesize{\authorI} & \footnotesize{\niaI} & \footnotesize{\groupI}\\
             \footnotesize{\authorII} & \footnotesize{\niaII} & \footnotesize{\groupII}\\
-            \footnotesize{\authorIII} & \footnotesize{\niaIII} & \footnotesize{\groupIII}\\
+            \footnotesize{\authorIII} & \footnotesize{\niaIII} & \footnotesize{\groupIII}
         \end{tabular}
         \fi
     \fi
     \ifauthorsfour
         \ifemail
         \begin{tabular}{ r r }
-            \multicolumn{2}{r}{\footnotesize{\groupIV{}}}\\
+            \multicolumn{2}{r}{\footnotesize{\groupIV}}\\
             \footnotesize{\authorIofIV} & \footnotesize{\niaIofIV}\\
             \multicolumn{2}{r}{\footnotesize{\emailI}}\\
             \footnotesize{\authorIIofIV} & \footnotesize{\niaIIofIV}\\
@@ -165,15 +166,15 @@
             \footnotesize{\authorIIIofIV} & \footnotesize{\niaIIIofIV}\\
             \multicolumn{2}{r}{\footnotesize{\emailIII}}\\
             \footnotesize{\authorIVofIV} & \footnotesize{\niaIVofIV}\\
-            \multicolumn{2}{r}{\footnotesize{\emailIV}}\\
+            \multicolumn{2}{r}{\footnotesize{\emailIV}}
         \end{tabular}
         \else
         \begin{tabular}{ r r }
-            \multicolumn{2}{r}{\footnotesize{\groupIV{}}}\\
+            \multicolumn{2}{r}{\footnotesize{\groupIV}}\\
             \footnotesize{\authorIofIV} & \footnotesize{\niaIofIV}\\
             \footnotesize{\authorIIofIV} & \footnotesize{\niaIIofIV}\\
             \footnotesize{\authorIIIofIV} & \footnotesize{\niaIIIofIV}\\
-            \footnotesize{\authorIVofIV} & \footnotesize{\niaIVofIV}\\
+            \footnotesize{\authorIVofIV} & \footnotesize{\niaIVofIV}
         \end{tabular}
         \fi
     \fi
