@@ -178,7 +178,7 @@
     \begin{center}
     \textcolor{uc3mNewBlue}{\rule{\textwidth}{3px}} 
     {\Huge {\textcolor{gray}{\fontseries{bx}{\selectfont \documenttitle}}}
-    ~\\[0.1 cm]
+    ~\\[0.3 cm]
     \textcolor{uc3mNewBlue}{\rule{\textwidth}{3px}}}
     ~\\[0.1 cm]
     \Large \mdseries\textcolor{gray}{
