@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}                                                    % Tells the compiler which version of LaTeX the package is for.
-\ProvidesClass{UC3M_slides}[2016/04/21 Template for UC3M work report]       % Gives the compiler some information about your package.
+\ProvidesClass{UC3M_slides}[Template for UC3M slides]                       % Gives the compiler some information about your package.
 \LoadClass{beamer}                                                          % Our template is based on beamer.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
