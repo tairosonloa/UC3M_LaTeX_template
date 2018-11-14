@@ -6,7 +6,7 @@
 %               UC3M Work report template              %
 %           Universidad Carlos III de Madrid           %
 %              Author: Aitor Alonso Núñez              %
-%              Last update: October 2018               %
+%              Last update: November 2018              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Required Packages %%%%%
@@ -32,23 +32,25 @@
 \RequirePackage{caption}                                                        % To add captions
 \RequirePackage{subcaption}                                                     % To add subcaptions
 \RequirePackage[
-    hidelinks,                      % Remove borders from links and refrences
-    colorlinks=true,                % Links and references have colors
-    allcolors=uc3mNewBlue,          % Set links and references color
-    linktoc=all]                    % Title and page number of table of contents as symlink
-    {hyperref}                      % Index elements works as cross references. Also functional links to internet pages
-\RequirePackage{nameref}                % Allow to add labels with \label{name} which can be reference with \nameref{name}
+    hidelinks,                                                                  % Remove borders from links and refrences
+    colorlinks=true,                                                            % Links and references have colors
+    allcolors=uc3mNewBlue,                                                      % Set links and references color
+    linktoc=all]                                                                % Title and page number of table of contents as symlink
+    {hyperref}                                                                  % Index elements works as cross references. Also functional links to internet pages
+\RequirePackage{nameref}                                                        % Allow to add labels with \label{name} which can be reference with \nameref{name}
 
 %%%%% Setting margins %%%%%
 \setlength{\headheight}{50pt}
 \setlength{\footskip}{30pt}
 \geometry{a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
 
-\onehalfspace                   % Spacing between lines.
-\setlength{\parindent}{0cm}     % Indent length.
+\onehalfspace                      % Spacing between lines.
+\setlength{\parindent}{0cm}        % Indent length.
 
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist   %To change margins of a few lines.
+\let\endchangemargin=\endlist      %To change margins of a few lines.
+
+\renewcommand{\arraystretch}{1.25} % Table cells margin
 
 %%%%% Colors %%%%%
 \definecolor{gray}{rgb}{0.2509803922, 0.2509803922, 0.2509803922}
