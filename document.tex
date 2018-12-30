@@ -5,7 +5,7 @@
 %               UC3M Work report template              %
 %           Universidad Carlos III de Madrid           %
 %              Author: Aitor Alonso Núñez              %
-%              Last update: October 2018               %
+%              Last update: January 2019               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Preamble %%%%%
@@ -46,9 +46,10 @@
     \hypersetup{linkcolor=black}    % References/links on the index will remain black color
     \singlespacing                  % Single line spacing between items on table of contents
     \tableofcontents\newpage        % Index of the document
-    \listoffigures\newpage          % Index of pictures
-    \listoftables\newpage           % Index of tables
+    % \listoffigures\newpage          % Index of pictures
+    % \listoftables\newpage           % Index of tables
 }
+
 
 %%%%% DOCUMENT CONTENT %%%%%
 %% VERY IMPORTANT!!! On the first line of this .tex file, select Spanish or English language to coincide with document text language
@@ -80,4 +81,28 @@ This is a reference to the \nameref{section_label}
 This is an \href{https://github.com/tairosonloa/UC3M_LaTeX_template}{hyperlink to my GitHub repository}.
 
 This is an url: \url{https://github.com/tairosonloa/UC3M_LaTeX_template}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|L{0.3\textwidth}|C{0.3\textwidth}|R{0.3\textwidth}|}
+    \hline
+    \hcell{Left} & \hcell{Center} & \hcell{Right} \\ \hline
+    Left aligned cell with fixed text in it. & Centered aligned cell with fixed text in it. & Right aligned cell with fixed text in it. \\ \hline
+    \end{tabular}
+\end{table}
+
+Here is a list:
+\begin{itemize}
+    \item Item 1
+    \item Item 2
+    \begin{itemize}
+        \item Item 2.1
+        \begin{itemize}
+            \item Item 2.1.1
+            \begin{itemize}
+                \item Item 2.1.1
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
 \end{document}

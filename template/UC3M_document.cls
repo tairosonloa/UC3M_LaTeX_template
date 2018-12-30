@@ -6,7 +6,7 @@
 %               UC3M Work report template              %
 %           Universidad Carlos III de Madrid           %
 %              Author: Aitor Alonso Núñez              %
-%              Last update: November 2018              %
+%              Last update: January 2019               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Required Packages %%%%%
@@ -38,30 +38,55 @@
     linktoc=all]                                                                % Title and page number of table of contents as symlink
     {hyperref}                                                                  % Index elements works as cross references. Also functional links to internet pages
 \RequirePackage{nameref}                                                        % Allow to add labels with \label{name} which can be reference with \nameref{name}
-
-%%%%% Setting margins %%%%%
-\setlength{\headheight}{50pt}
-\setlength{\footskip}{30pt}
-\geometry{a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
-
-\onehalfspace                      % Spacing between lines.
-\setlength{\parindent}{0cm}        % Indent length.
-
-\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist      %To change margins of a few lines.
-
-\renewcommand{\arraystretch}{1.25} % Table cells margin
+\RequirePackage{array}                                                          % Table formating
 
 %%%%% Colors %%%%%
 \definecolor{gray}{rgb}{0.2509803922, 0.2509803922, 0.2509803922}
 \definecolor{grayLight}{rgb}{0.4980392157, 0.4980392157, 0.4980392157}
-%Color UC3M corporative identity
+% Color UC3M corporative identity
 % - Old corporative identity
 \definecolor{uc3mDarkBlue}{RGB}{0, 7, 121}
 \definecolor{uc3mBlue}{RGB}{32, 85, 138}
 \definecolor{uc3mLightBlue}{RGB}{99, 158, 200}
 % - New corporative identity
 \definecolor{uc3mNewBlue}{RGB}{0, 29, 133}
+
+%%%%% Margins %%%%%
+\setlength{\headheight}{60pt}
+\setlength{\footskip}{45pt}
+\geometry{a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
+
+\onehalfspace                      % Spacing between lines.
+\setlength{\parindent}{0cm}        % Indent length.
+
+% \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+% \let\endchangemargin=\endlist      %To change margins of a few lines.
+
+%%%%% Lists formating %%%%%
+\renewcommand{\labelitemi}{\textcolor{uc3mNewBlue}{$\bullet$}}
+\renewcommand{\labelitemii}{\textcolor{uc3mNewBlue}{$\circ$}}
+\renewcommand{\labelitemiii}{\textcolor{uc3mNewBlue}{\textbullet}}
+\renewcommand{\labelitemiv}{\textcolor{uc3mNewBlue}{$\diamond$}}
+\renewcommand{\@listI}{ % List margins
+    \leftmargin=25pt
+    \rightmargin=0pt
+    \labelsep=5pt
+    \labelwidth=20pt
+    \itemindent=0pt
+    \listparindent=0pt
+    \topsep=-5pt
+    \partopsep=0pt plus 1pt minus 1pt
+    \parsep=0pt plus 1pt
+    \itemsep=\parsep
+}
+
+%%%%% Table formating %%%%%
+\renewcommand{\arraystretch}{1.25} % Table cells margin
+\newcommand{\hcell}[1]{\cellcolor{uc3mNewBlue}{\color{white} \textbf{#1}}} % Table header cell, blue background with white bold text.
+% Table cells with fixed size
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Left aligned
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Centered
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Right aligned
 
 %%%%% Some booleans to format header and title page %%%%%
 \newif\ifauthorstwo
@@ -184,7 +209,8 @@
     \textcolor{uc3mNewBlue}{\rule{\textwidth}{3px}}}
     ~\\[0.1 cm]
     \Large \mdseries\textcolor{gray}{
-    \textbf{\studyname}
+    \textbf{\campus}
+    \textbf{\\\studyname}
     \textbf{\\\subjectname}}
     \end{center}
     \vspace{5mm}
