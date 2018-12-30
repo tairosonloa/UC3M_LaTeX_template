@@ -5,7 +5,7 @@
 %                  UC3M slides template                %
 %           Universidad Carlos III de Madrid           %
 %              Author: Aitor Alonso Núñez              %
-%              Last update: October 2018               %
+%              Last update: January 2019               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Preamble %%%%%
@@ -82,6 +82,36 @@
     \frametitle{Frame title}
     \framesubtitle{Frame subtitle}
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet odio sed enim condimentum maximus sagittis vel nisl. Ut commodo mattis eros quis consequat. Nulla tincidunt fermentum neque non tempor. Donec suscipit ultrices interdum. In hac habitasse platea dictumst. Donec eget rhoncus enim. Vivamus rutrum lobortis viverra.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frame title}
+    \framesubtitle{Frame subtitle}
+    Here is a table:
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|L{0.3\textwidth}|C{0.3\textwidth}|R{0.3\textwidth}|}
+        \hline
+        \hcell{Left} & \hcell{Center} & \hcell{Right} \\ \hline
+        Left aligned cell with fixed text in it. & Centered aligned cell with fixed text in it. & Right aligned cell with fixed text in it. \\ \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frame title}
+    \framesubtitle{Frame subtitle}
+    Here is a list:
+    \begin{itemize}
+        \item Item 1
+        \item Item 2
+        \begin{itemize}
+            \item Item 2.1
+            \begin{itemize}
+                \item Item 2.1.1
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \maketitle % Title slide

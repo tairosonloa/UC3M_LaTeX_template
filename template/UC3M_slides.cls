@@ -6,11 +6,13 @@
 %                 UC3M slides template                 %
 %           Universidad Carlos III de Madrid           %
 %              Author: Aitor Alonso Núñez              %
-%              Last update: October 2018               %
+%              Last update: January 2019               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Required Packages %%%%%
+\RequirePackage{color}                                                          % Colors
 \RequirePackage{xcolor}                                                         % More colors
+\RequirePackage{colortbl}                                                       % Table colors
 \usepackage[scaled]{helvet}                                                     % Helvet font as is the UC3M corporate identity font
 \RequirePackage{graphicx}                                                       % To add images and graphics.
 \RequirePackage{caption}                                                        % To add captions
@@ -19,6 +21,7 @@
 \RequirePackage{textcomp}                                                       % To write symbols like €
 \RequirePackage{tikz}                                                           % To set header image
 \RequirePackage{fancybox}                                                       % To set title into a box
+\RequirePackage{array}                                                          % Table formating
 
 %%%%% Colors %%%%%
 \definecolor{gray}{rgb}{0.2509803922, 0.2509803922, 0.2509803922}
@@ -34,7 +37,33 @@
 \setbeamercolor{structure}{fg=uc3mNewBlue}              % Slides structure
 \setbeamercolor{title}{fg=white,bg=uc3mNewBlue}         % Title slide blue box
 \setbeamercolor{frametitle}{fg=white,bg=uc3mNewBlue}    % Frame title header
-\setbeamercolor{footline}{fg=white,bg=uc3mNewBlue}    % Footer
+\setbeamercolor{footline}{fg=white,bg=uc3mNewBlue}      % Footer
+
+%%%%% Lists formating %%%%%
+\renewcommand{\labelitemi}{\textcolor{uc3mNewBlue}{$\bullet$}}
+\renewcommand{\labelitemii}{\textcolor{uc3mNewBlue}{$\circ$}}
+\renewcommand{\labelitemiii}{\textcolor{uc3mNewBlue}{\textbullet}}
+\renewcommand{\labelitemiv}{\textcolor{uc3mNewBlue}{$\diamond$}}
+\renewcommand{\@listI}{ % List margins
+    \leftmargin=25pt
+    \rightmargin=0pt
+    \labelsep=5pt
+    \labelwidth=20pt
+    \itemindent=0pt
+    \listparindent=0pt
+    \topsep=-5pt
+    \partopsep=0pt plus 1pt minus 1pt
+    \parsep=0pt plus 1pt
+    \itemsep=\parsep
+}
+
+%%%%% Table formating %%%%%
+\renewcommand{\arraystretch}{1.25} % Table cells margin
+\newcommand{\hcell}[1]{\cellcolor{uc3mNewBlue}{\color{white} \textbf{#1}}} % Table header cell, blue background with white bold text.
+% Table cells with fixed size
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Left aligned
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Centered
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % Right aligned
 
 %%%%% Table of contents theme
 \useinnertheme{circles}
