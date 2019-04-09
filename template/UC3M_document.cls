@@ -52,9 +52,15 @@
 \definecolor{uc3mNewBlue}{RGB}{0, 29, 133}
 
 %%%%% Margins %%%%%
-\setlength{\headheight}{60pt}
-\setlength{\footskip}{45pt}
-\geometry{a4paper,tmargin=40mm,bmargin=40mm,lmargin=25mm,rmargin=20mm}
+\setlength{\headheight}{60pt}   % Header height (vertical size)
+\setlength{\footskip}{20pt}     % Footer height (vertical size)
+\geometry{
+    a4paper,        % Use A4 paper
+    tmargin=39mm,   % Distance (margin) from document content (including header) to sheet top border
+    bmargin=29mm,   % Distance (margin) from document content (including footer) to sheet bottom border
+    lmargin=25mm,   % Distance (margin) from document content to sheet left border
+    rmargin=20mm    % Distance (margin) from document content to sheet right border
+}
 
 \onehalfspace                      % Spacing between lines.
 \setlength{\parindent}{0cm}        % Indent length.
